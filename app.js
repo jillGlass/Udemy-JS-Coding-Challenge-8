@@ -72,13 +72,13 @@ const allStreets = [
   new Street("Sunset Boulevard", 1982, 2.5, 5),
 ];
 
-function reportParks(allParks) {
-
-function calc(arr) {
+function calculate(arr) {
     //average of numbers passed in
 const sum = arr.reduce((prev, cur, index) => prev + cur, 0);
 return [sum, sum / arr.length];
 }
+
+function reportParks(allParks) {
 
     console.log('---PARKS REPORT---')
 // Density
@@ -86,8 +86,8 @@ allParks.forEach(el => el.treeDensity());
 
 // Average age = sum of all ages/number of parks
 const ages = allParks.map(el => new Date().getFullYear() - el.buildYear )
-const [totalAge, AvAge] = calc(ages);
-console.log(`Our ${allParks.length} parks have an average age of ${AvAge} years.`)
+const [totalAge, avAge] = calculate(ages);
+console.log(`Our ${allParks.length} parks have an average age of ${avAge} years.`)
 
 // More than 1000 trees
 // chain two methods together, findIndex() with map()
@@ -101,6 +101,15 @@ const index = allParks.map(el =>
 
 function reportStreets(allStreets) {
     console.log('---STREETS REPORT---')
+//Total and average length of the town's streets
+const length = allStreets.map(el => el.length);
+const [totalLength, avLength] = calculate(length);
+
+console.log(`Our ${allStreets.length} streets have a total length of ${totalLength} kilometers with an average length of ${avLength} kilometers`)
+
+
+// Size classification of all streets: tiny/small/normal/big/huge.
+
 }
 
 reportParks(allParks);
