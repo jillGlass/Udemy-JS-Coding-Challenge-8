@@ -90,6 +90,13 @@ const [totalAge, AvAge] = calc(ages);
 console.log(`Our ${allParks.length} parks have an average age of ${AvAge} years.`)
 
 // More than 1000 trees
+// chain two methods together, findIndex() with map()
+// map through all the parks and return number of trees. In the returned array, find the index of those with more than 1000 trees. You can then get the name of that index {allParks[index].name}
+const index = allParks.map(el => 
+    el.numTrees).findIndex(el => el >= 1000);
+
+    console.log(`${allParks[index].name} has more than 1000 trees.`)
+
 }
 
 function reportStreets(allStreets) {
