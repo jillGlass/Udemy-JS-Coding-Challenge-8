@@ -17,6 +17,8 @@ All the report data should be printed to the console.
 HINT: Use some of the ES6 features: classes, subclasses, template strings, default parameters, maps, arrow functions, destructuring, etc.
 */
 
+
+
 class Element {
     constructor(name, buildYear) {
         this.name = name;
@@ -26,12 +28,28 @@ class Element {
 
 class Parks extends Element {
     constructor(name, buildYear, area, numTrees) {
-        super(name, buildYear) {
+        super(name, buildYear)
             this.area = area;
             this.numTrees = numTrees;
-        }
+        }   
+}
+
+class Streets extends Element {
+    constructor(name, buildYear, length, size) {
+        super(name, buildYear)
+            this.length = length;
+            this.size = size;
     }
 }
+
+const allParks = [new Park('Green Park', 1987, 0.2, 215),
+                 new Park('National Park', 1894, 2.9, 3541),
+                 new Park('Oak Park', 1953, 0.4, 949)];
+
+const allStreets = [new Street('Ocean Avenue', 1999, 1.1, 4),
+                   new Street('Evergreen Street', 2008, 2.7, 2),
+                   new Street('4th Street', 2015, 0.8),
+                   new Street('Sunset Boulevard', 1982, 2.5, 5)];
 
 function treeDensity() {
     //number of trees/park area
@@ -47,7 +65,12 @@ function avParkAge() {
 
 function moreThan1000() {
     //park that has more than 1000 trees
-    if(this.numTrees >== 1000) {
-        console.log(`${this.name} has more than 1000 trees`)
+    //loop through parks
+    const trees = this.numTrees.map(tree => {
+        if(this.numTrees >= 1000) {
+            console.log(`${this.name} has more than 1000 trees`)
+        }
     }
+        )
+    
 }
