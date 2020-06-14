@@ -30,6 +30,7 @@ class Park extends Element {
     this.area = area;
     this.numTrees = numTrees;
   }
+  
   treeDensity() {
     const density = this.numTrees / this.area;
     console.log(
@@ -44,6 +45,7 @@ class Street extends Element {
     this.length = length;
     this.size = size;
   }
+
   classifyStreet() {
     const classification = new Map();
     classification.set(1, "tiny");
@@ -109,6 +111,7 @@ console.log(`Our ${allStreets.length} streets have a total length of ${totalLeng
 
 
 // Size classification of all streets: tiny/small/normal/big/huge.
+allStreets.forEach(el => el.classifyStreet())
 
 }
 
