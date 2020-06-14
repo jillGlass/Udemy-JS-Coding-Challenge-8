@@ -38,3 +38,16 @@ function treeDensity() {
     const density = this.numTrees / this.area;
     console.log(`The tree density of ${this.name} is ${density} km squared`)
 }
+
+function avParkAge() {
+    //sum of all ages/number of parks
+    const average = this.ages / this.numParks;
+    console.log(`The average age of ${this.name} is ${average} years`)
+}
+
+function moreThan1000() {
+    //park that has more than 1000 trees
+    if(this.numTrees >== 1000) {
+        console.log(`${this.name} has more than 1000 trees`)
+    }
+}
