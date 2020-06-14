@@ -74,11 +74,20 @@ const allStreets = [
 
 function reportParks(allParks) {
 
+function calc(arr) {
+    //average of numbers passed in
+const sum = arr.reduce((prev, cur, index) => prev + cur, 0);
+return [sum, sum / arr.length];
+}
+
     console.log('---PARKS REPORT---')
 // Density
 allParks.forEach(el => el.treeDensity());
 
-// Average age
+// Average age = sum of all ages/number of parks
+const ages = allParks.map(el => new Date().getFullYear() - el.buildYear )
+const [totalAge, AvAge] = calc(ages);
+console.log(`Our ${allParks.length} parks have an average age of ${AvAge} years.`)
 
 // More than 1000 trees
 }
